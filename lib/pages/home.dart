@@ -41,7 +41,101 @@ class _HomeState extends State<Home> {
         ),
       ),
       Center(),
-      Center()
+      Padding(
+        padding: const EdgeInsets.all(25.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Account',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 20.0),
+            Row(
+              children: [
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/profilephoto.jpg'),
+                  radius: 60.0,
+                ),
+                SizedBox(width: 20.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Sai Sruti',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold)),
+                    SizedBox(height: 5.0),
+                    Text('saisruti98@gmail.com',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w400))
+                  ],
+                )
+              ],
+            ),
+            SizedBox(height: 30.0),
+            TextButton.icon(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.lock,
+                  size: 22.0,
+                  color: Colors.white,
+                ),
+                label: Text('Change Password',
+                    style: TextStyle(fontSize: 22.0, color: Colors.white))),
+            SizedBox(height: 20.0),
+            TextButton.icon(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.star,
+                  size: 22.0,
+                  color: Colors.white,
+                ),
+                label: Text('Rate Bill Buddy',
+                    style: TextStyle(fontSize: 22.0, color: Colors.white))),
+            SizedBox(height: 20.0),
+            TextButton.icon(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.question_mark,
+                  size: 22.0,
+                  color: Colors.white,
+                ),
+                label: Text('Contact Support',
+                    style: TextStyle(fontSize: 22.0, color: Colors.white))),
+            SizedBox(height: 20.0),
+            TextButton.icon(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.notifications,
+                  size: 22.0,
+                  color: Colors.white,
+                ),
+                label: Text('Manage Notifications',
+                    style: TextStyle(fontSize: 22.0, color: Colors.white))),
+            SizedBox(height: 40.0),
+            Center(
+                child: ElevatedButton.icon(
+              onPressed: () {},
+              icon: Icon(
+                Icons.logout,
+                color: Colors.black,
+                size: 30.0,
+              ),
+              label: Text(
+                'Logout',
+                style: TextStyle(color: Colors.black, fontSize: 18.0),
+              ),
+            ))
+          ],
+        ),
+      )
     ];
   }
 

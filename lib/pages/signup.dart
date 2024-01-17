@@ -22,11 +22,12 @@ class _SignUpState extends State<SignUp> {
   }
 
   void _submit() {
-    final isValid = _formKey.currentState!.validate();
-    if (isValid) {
-      print(email.text);
-      Navigator.pushNamed(context, '/home');
-    }
+    // final isValid = _formKey.currentState!.validate();
+    // if (isValid) {
+    //   print(email.text);
+    //   Navigator.pushNamed(context, '/home');
+    // }
+    Navigator.pushNamed(context, '/home');
   }
 
   @override
