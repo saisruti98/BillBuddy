@@ -33,7 +33,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Colors.grey[900],
         body: SafeArea(
           child: Padding(
               padding: EdgeInsets.fromLTRB(40, 20, 40, 40),
@@ -135,10 +135,11 @@ class _SignUpState extends State<SignUp> {
                         icon: Icon(
                           Icons.login,
                           color: Colors.black,
+                          size: 30.0,
                         ),
                         label: Text(
                           'Sign Up',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color: Colors.black, fontSize: 18.0),
                         ),
                       ),
                       SizedBox(height: 10.0),

@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
             Row(
               children: [
                 CircleAvatar(
-                  backgroundImage: AssetImage('assets/profilephoto.jpg'),
+                  backgroundImage: AssetImage('assets/profilephoto3.jpg'),
                   radius: 60.0,
                 ),
                 SizedBox(width: 20.0),
@@ -140,50 +140,45 @@ class _HomeState extends State<Home> {
   }
 
   Widget groupDisplay(data) {
-    return Card(
-      // shape: RoundedRectangleBorder(
-      //     borderRadius: BorderRadius.all(Radius.circular(5.0))),
-      color: Color.fromRGBO(239, 252, 255, 1),
-      margin: EdgeInsets.fromLTRB(16.0, 25.0, 16.0, 0),
-      child: Padding(
-        padding: EdgeInsets.all(12.0),
-        child: Row(
-          children: [
-            Image(
-              image: AssetImage('assets/money.jpg'),
-              height: 90.0,
-            ),
-            SizedBox(width: 10.0),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  data,
-                  style: TextStyle(
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue[900],
-                  ),
+    return Container(
+      padding: EdgeInsets.all(12.0),
+      margin: EdgeInsets.fromLTRB(16.0, 10.0, 16.0, 0),
+      child: Row(
+        children: [
+          Image(
+            image: AssetImage('assets/home.jpg'),
+            height: 90.0,
+          ),
+          SizedBox(width: 20.0),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                data,
+                style: TextStyle(
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
-                SizedBox(height: 5.0),
-                Text(
-                  'settled up',
-                  style: TextStyle(
-                      fontSize: 18.0,
-                      color: Colors.green[900],
-                      fontWeight: FontWeight.w700),
-                ),
-                // Text(
-                //   'you owe \$10.9',
-                //   style: TextStyle(
-                //       fontSize: 18.0,
-                //       color: Colors.red[800],
-                //       fontWeight: FontWeight.w700),
-                // )
-              ],
-            )
-          ],
-        ),
+              ),
+              SizedBox(height: 5.0),
+              Text(
+                'settled up',
+                style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.green,
+                    fontWeight: FontWeight.w700),
+              ),
+              // Text(
+              //   'you owe \$10.9',
+              //   style: TextStyle(
+              //       fontSize: 18.0,
+              //       color: Colors.red[800],
+              //       fontWeight: FontWeight.w700),
+              // )
+            ],
+          )
+        ],
       ),
     );
   }
@@ -197,13 +192,13 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[800],
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Colors.grey[900],
         elevation: 1.0,
         title: const Text(
           'Bill Buddy',
@@ -224,7 +219,7 @@ class _HomeState extends State<Home> {
         child: _options.elementAt(selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Colors.grey[850],
         items: [
           BottomNavigationBarItem(
               icon: Icon(
