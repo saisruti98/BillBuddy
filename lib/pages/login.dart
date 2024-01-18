@@ -1,38 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({super.key});
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  State<SignUp> createState() => _SignUpState();
+  State<Login> createState() => _LoginState();
 }
 
-class _SignUpState extends State<SignUp> {
+class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
-  final username = TextEditingController();
   final email = TextEditingController();
   final password = TextEditingController();
 
   @override
   void dispose() {
-    username.dispose();
     email.dispose();
     password.dispose();
     super.dispose();
   }
 
   void _submit() {
-    // final isValid = _formKey.currentState!.validate();
+    //final isValid = _formKey.currentState!.validate();
     // if (isValid) {
     //   print(email.text);
-    //   Navigator.pushNamed(context, '/home');
+    //   Navigator.push(
+    //       context,
+    //       MaterialPageRoute(
+    //           builder: (context) =>
+    //               Home(username: 'Sruti', email: email.text)));
     // }
     Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) =>
-                Home(username: username.text, email: email.text)));
+            builder: (context) => Home(username: 'Sruti', email: email.text)));
   }
 
   @override
@@ -67,27 +68,7 @@ class _SignUpState extends State<SignUp> {
                             fontSize: 20.0,
                             color: Colors.white),
                       ),
-                      SizedBox(height: 40.0),
-                      TextFormField(
-                        controller: username,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Enter a valid username!';
-                          }
-                          return null;
-                        },
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.only(bottom: 0.0),
-                          border: UnderlineInputBorder(),
-                          labelText: 'User Name',
-                          labelStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.0,
-                              fontStyle: FontStyle.italic),
-                        ),
-                        style: TextStyle(color: Colors.white, fontSize: 20.0),
-                      ),
-                      SizedBox(height: 20.0),
+                      SizedBox(height: 50.0),
                       TextFormField(
                         controller: email,
                         validator: (value) {
@@ -110,7 +91,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                         style: TextStyle(color: Colors.white, fontSize: 20.0),
                       ),
-                      SizedBox(height: 20.0),
+                      SizedBox(height: 30.0),
                       TextFormField(
                         controller: password,
                         validator: (value) {
@@ -134,7 +115,7 @@ class _SignUpState extends State<SignUp> {
                         obscureText: true,
                         style: TextStyle(color: Colors.white, fontSize: 20.0),
                       ),
-                      SizedBox(height: 40.0),
+                      SizedBox(height: 50.0),
                       ElevatedButton.icon(
                         onPressed: _submit,
                         icon: Icon(
@@ -143,17 +124,17 @@ class _SignUpState extends State<SignUp> {
                           size: 30.0,
                         ),
                         label: Text(
-                          'Register',
+                          'Login',
                           style: TextStyle(color: Colors.black, fontSize: 18.0),
                         ),
                       ),
                       SizedBox(height: 10.0),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/');
+                          Navigator.pushNamed(context, '/signup');
                         },
                         child: Text(
-                          'Have an account? Sign In',
+                          "Don't have an account? Sign Up",
                           style: TextStyle(
                               decoration: TextDecoration.underline,
                               decorationColor: Colors.white,

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  const Home({super.key, required this.username, required this.email});
+
+  final String username;
+  final String email;
 
   @override
   State<Home> createState() => _HomeState();
@@ -64,13 +67,13 @@ class _HomeState extends State<Home> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Sai Sruti',
+                    Text(widget.username,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold)),
                     SizedBox(height: 5.0),
-                    Text('saisruti98@gmail.com',
+                    Text(widget.email,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 18.0,
@@ -122,7 +125,9 @@ class _HomeState extends State<Home> {
             SizedBox(height: 40.0),
             Center(
                 child: ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon: Icon(
                 Icons.logout,
                 color: Colors.black,
@@ -224,21 +229,18 @@ class _HomeState extends State<Home> {
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.group_outlined,
-                // color: Color.fromRGBO(168, 166, 166, 1),
                 size: 35.0,
               ),
               label: 'Groups'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.bar_chart,
-                // color: Color.fromRGBO(168, 166, 166, 1),
                 size: 35.0,
               ),
               label: 'Balance'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.account_circle,
-                // color: Color.fromRGBO(168, 166, 166, 1),
                 size: 35.0,
               ),
               label: 'Account')
